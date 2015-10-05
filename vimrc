@@ -16,7 +16,7 @@ filetype plugin indent on
 syntax on
 scriptencoding utf-8
 set encoding=utf-8
-set backstacpe=2
+set backspace=2
 set nobackup
 set nowritebackup
 set noswapfile
@@ -32,3 +32,4 @@ set expandtab
 set list listchars=tab:»·,trail:·,nbsp:·
 set textwidth=80
 set colorcolumn=+1
+
