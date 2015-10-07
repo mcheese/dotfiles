@@ -1,6 +1,8 @@
 let mapleader = " "
 inoremap jj <ESC>
 
+nnoremap <silent><leader>n :set relativenumber!<cr>
+
 " Split
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
@@ -15,6 +17,8 @@ nnoremap <A-H> :tabprevious<CR>
 filetype plugin indent on
 syntax on
 scriptencoding utf-8
+set number
+set numberwidth=5
 set encoding=utf-8
 set backspace=2
 set nobackup
