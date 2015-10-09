@@ -21,6 +21,7 @@ set number
 set numberwidth=5
 set encoding=utf-8
 set backspace=2
+set so=5
 set nobackup
 set nowritebackup
 set noswapfile
