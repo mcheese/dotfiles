@@ -2,6 +2,7 @@ let mapleader = " "
 inoremap jj <ESC>
 
 nnoremap <silent><leader>n :set relativenumber!<cr>
+set relativenumber
 
 " Split
 nnoremap <C-J> <C-W><C-J>
