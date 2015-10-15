@@ -2,6 +2,7 @@ let mapleader = " "
 inoremap jj <ESC>
 
 nnoremap <silent><leader>n :set relativenumber!<cr>
+set relativenumber
 
 " Split
 nnoremap <C-J> <C-W><C-J>
@@ -11,8 +12,8 @@ nnoremap <C-H> <C-W><C-H>
 set splitbelow
 set splitright
 " Tabs
-nnoremap <A-L> :tabnext<CR>
-nnoremap <A-H> :tabprevious<CR>
+nnoremap <silent><leader>l :tabnext<CR>
+nnoremap <silent><leader>h :tabprevious<CR>
 
 filetype plugin indent on
 syntax on
