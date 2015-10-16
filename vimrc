@@ -1,8 +1,30 @@
+""" Plugin Manager """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+" Let Vundle manage Vundle
+Bundle 'gmarik/vundle'
+
+""" Bundles """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" smart c autocompletion
+Bundle 'Rip-Rip/clang_complete'
+" autocomplete with <TAB>
+Bundle 'ervandew/supertab'
+" better textbased autocompletion
+Bundle 'Shougo/neocomplete.vim'
+" status bar at the bottom
+Bundle 'bling/vim-airline'
+
+""" Real Config """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 let mapleader = " "
 inoremap jj <ESC>
 
 nnoremap <silent><leader>n :set relativenumber!<cr>
 set relativenumber
+
+autocmd CompleteDone * pclose   " Auto close preview window
 
 " Split
 nnoremap <C-J> <C-W><C-J>
