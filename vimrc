@@ -7,8 +7,6 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 """ Bundles """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" smart c autocompletion
-Bundle 'Rip-Rip/clang_complete'
 " autocomplete with <TAB>
 Bundle 'ervandew/supertab'
 " better textbased autocompletion
