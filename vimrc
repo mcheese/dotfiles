@@ -1,4 +1,4 @@
-""" Plugin Manager """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Plugin Manager """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/vundle/
@@ -7,12 +7,12 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 """ Bundles """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" autocomplete with <TAB>
-Bundle 'ervandew/supertab'
-" better textbased autocompletion
-Bundle 'Shougo/neocomplete.vim'
 " status bar at the bottom
 Bundle 'bling/vim-airline'
+" completion
+Bundle 'Valloric/YouCompleteMe'
+" generate completion config
+Bundle 'rdnetto/YCM-Generator'
 
 """ Real Config """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -24,16 +24,21 @@ set relativenumber
 
 autocmd CompleteDone * pclose   " Auto close preview window
 
+"format
+map <C-F> :pyf /usr/bin/clang-format.py<cr>
+
+let g:ycm_confirm_extra_conf = 0
+
 " Split
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
+nnoremap <leader>j <C-W><C-J>
+nnoremap <leader>k <C-W><C-K>
+nnoremap <leader>l <C-W><C-L>
+nnoremap <leader>h <C-W><C-H>
 set splitbelow
 set splitright
 " Tabs
-nnoremap <silent><leader>l :tabnext<CR>
-nnoremap <silent><leader>h :tabprevious<CR>
+nnoremap <silent><leader>o :tabnext<CR>
+nnoremap <silent><leader>i :tabprevious<CR>
 
 filetype plugin indent on
 syntax on
