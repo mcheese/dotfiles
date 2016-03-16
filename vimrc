@@ -25,9 +25,14 @@ set relativenumber
 autocmd CompleteDone * pclose   " Auto close preview window
 
 "format
-map <C-F> :pyf /usr/bin/clang-format.py<cr>
+map <C-K> :pyf /usr/bin/clang-format.py<cr>
+imap <C-K> <c-o>:pyf /usr/bin/clang-format.py<cr>
 
 let g:ycm_confirm_extra_conf = 0
+let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
+
+nnoremap <silent><leader>g :YcmCompleter GoTo<cr>
+nnoremap <silent><leader>t :YcmCompleter GetType<cr>
 
 " Split
 nnoremap <leader>j <C-W><C-J>
@@ -43,6 +48,7 @@ nnoremap <silent><leader>i :tabprevious<CR>
 filetype plugin indent on
 syntax on
 scriptencoding utf-8
+set clipboard=unnamedplus
 set number
 set numberwidth=5
 set encoding=utf-8
@@ -63,4 +69,5 @@ set expandtab
 set list listchars=tab:»·,trail:·,nbsp:·
 set textwidth=80
 set colorcolumn=+1
+highlight ColorColumn ctermbg=darkgrey
 
