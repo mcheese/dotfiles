@@ -1,4 +1,4 @@
-""" Plugin Manager """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Plugin Manager """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/vundle/
@@ -7,14 +7,14 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 """ Bundles """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" autocomplete with <TAB>
-Bundle 'ervandew/supertab'
-" better textbased autocompletion
-Bundle 'Shougo/neocomplete.vim'
 " status bar at the bottom
 Bundle 'bling/vim-airline'
 " quoting and parenthesizing made simple
 Bundle 'tpope/vim-surround'
+" completion
+Bundle 'Valloric/YouCompleteMe'
+" generate completion config
+Bundle 'rdnetto/YCM-Generator'
 
 """ Real Config """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -26,6 +26,7 @@ set relativenumber
 
 autocmd CompleteDone * pclose   " Auto close preview window
 
+<<<<<<< HEAD
 " Umlaute
 inoremap <C-l>[ <Char-252><cr><cr><cr><cr><cr>
 inoremap <C-l>{ <Char-220><cr>
@@ -37,21 +38,33 @@ inoremap <C-l>; <Char-246><cr><cr><cr>
 inoremap <C-l>: <Char-214><cr>
 
 inoremap <C-l>- <Char-223><cr>
+=======
+"format
+map <C-K> :pyf /usr/bin/clang-format.py<cr>
+imap <C-K> <c-o>:pyf /usr/bin/clang-format.py<cr>
+
+let g:ycm_confirm_extra_conf = 0
+let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
+
+nnoremap <silent><leader>g :YcmCompleter GoTo<cr>
+nnoremap <silent><leader>t :YcmCompleter GetType<cr>
+>>>>>>> 5460c68c2bdaf7137a345243053c1bcf53c057b7
 
 " Split
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
+nnoremap <leader>j <C-W><C-J>
+nnoremap <leader>k <C-W><C-K>
+nnoremap <leader>l <C-W><C-L>
+nnoremap <leader>h <C-W><C-H>
 set splitbelow
 set splitright
 " Tabs
-nnoremap <silent><leader>l :tabnext<CR>
-nnoremap <silent><leader>h :tabprevious<CR>
+nnoremap <silent><leader>o :tabnext<CR>
+nnoremap <silent><leader>i :tabprevious<CR>
 
 filetype plugin indent on
 syntax on
 scriptencoding utf-8
+set clipboard=unnamedplus
 set number
 set numberwidth=5
 set encoding=utf-8
@@ -72,4 +85,5 @@ set expandtab
 set list listchars=tab:»·,trail:·,nbsp:·
 set textwidth=80
 set colorcolumn=+1
+highlight ColorColumn ctermbg=darkgrey
 
