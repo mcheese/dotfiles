@@ -15,6 +15,8 @@ Bundle 'tpope/vim-surround'
 Bundle 'Valloric/YouCompleteMe'
 " generate completion config
 Bundle 'rdnetto/YCM-Generator'
+" file browser
+Bundle "scrooloose/nerdtree"
 
 """ Real Config """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -26,7 +28,6 @@ set relativenumber
 
 autocmd CompleteDone * pclose   " Auto close preview window
 
-<<<<<<< HEAD
 " Umlaute
 inoremap <C-l>[ <Char-252><cr><cr><cr><cr><cr>
 inoremap <C-l>{ <Char-220><cr>
@@ -38,7 +39,7 @@ inoremap <C-l>; <Char-246><cr><cr><cr>
 inoremap <C-l>: <Char-214><cr>
 
 inoremap <C-l>- <Char-223><cr>
-=======
+
 "format
 map <C-K> :pyf /usr/bin/clang-format.py<cr>
 imap <C-K> <c-o>:pyf /usr/bin/clang-format.py<cr>
@@ -48,7 +49,6 @@ let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
 
 nnoremap <silent><leader>g :YcmCompleter GoTo<cr>
 nnoremap <silent><leader>t :YcmCompleter GetType<cr>
->>>>>>> 5460c68c2bdaf7137a345243053c1bcf53c057b7
 
 " Split
 nnoremap <leader>j <C-W><C-J>
