@@ -44,7 +44,7 @@ inoremap <C-l>- <Char-223><cr>
 map <C-K> :pyf /usr/bin/clang-format.py<cr>
 imap <C-K> <c-o>:pyf /usr/bin/clang-format.py<cr>
 
-let g:ycm_confirm_extra_conf = 0
+let g:ycm_confirm_extra_conf = 1
 let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
 
 nnoremap <silent><leader>g :YcmCompleter GoTo<cr>
@@ -60,6 +60,8 @@ set splitright
 " Tabs
 nnoremap <silent><leader>o :tabnext<CR>
 nnoremap <silent><leader>i :tabprevious<CR>
+
+nnoremap <silent><leader>e :NERDTreeToggle<CR>
 
 filetype plugin indent on
 syntax on
