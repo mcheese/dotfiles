@@ -17,6 +17,8 @@ Bundle 'Valloric/YouCompleteMe'
 Bundle 'rdnetto/YCM-Generator'
 " file browser
 Bundle "scrooloose/nerdtree"
+" doxygen
+Bundle "vim-scripts/DoxygenToolkit.vim"
 
 """ Real Config """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -44,7 +46,7 @@ inoremap <C-l>- <Char-223><cr>
 map <C-K> :pyf /usr/bin/clang-format.py<cr>
 imap <C-K> <c-o>:pyf /usr/bin/clang-format.py<cr>
 
-let g:ycm_confirm_extra_conf = 1
+let g:ycm_confirm_extra_conf = 0
 let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
 
 nnoremap <silent><leader>g :YcmCompleter GoTo<cr>
@@ -87,5 +89,6 @@ set expandtab
 set list listchars=tab:»·,trail:·,nbsp:·
 set textwidth=80
 set colorcolumn=+1
+set term=xterm-256color
 highlight ColorColumn ctermbg=darkgrey
 
