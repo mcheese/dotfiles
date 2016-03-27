@@ -30,18 +30,6 @@ set relativenumber
 
 autocmd CompleteDone * pclose   " Auto close preview window
 
-" Umlaute
-inoremap <C-l>[ <Char-252><cr><cr><cr><cr><cr>
-inoremap <C-l>{ <Char-220><cr>
-
-inoremap <C-l>' <Char-228><cr><cr>
-inoremap <C-l>" <Char-196><cr>
-
-inoremap <C-l>; <Char-246><cr><cr><cr>
-inoremap <C-l>: <Char-214><cr>
-
-inoremap <C-l>- <Char-223><cr>
-
 "format
 map <C-K> :pyf /usr/bin/clang-format.py<cr>
 imap <C-K> <c-o>:pyf /usr/bin/clang-format.py<cr>
