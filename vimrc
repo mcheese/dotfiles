@@ -20,6 +20,9 @@ Bundle "scrooloose/nerdtree"
 " doxygen
 Bundle "vim-scripts/DoxygenToolkit.vim"
 
+Plugin 'vim-pandoc/vim-pandoc'
+Plugin 'vim-pandoc/vim-pandoc-syntax'
+
 """ Real Config """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 let mapleader = " "
@@ -36,6 +39,8 @@ imap <C-K> <c-o>:pyf /usr/bin/clang-format.py<cr>
 
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
+
+let g:airline_powerline_fonts = 1
 
 nnoremap <silent><leader>g :YcmCompleter GoTo<cr>
 nnoremap <silent><leader>t :YcmCompleter GetType<cr>
@@ -56,7 +61,6 @@ nnoremap <silent><leader>e :NERDTreeToggle<CR>
 filetype plugin indent on
 syntax on
 scriptencoding utf-8
-set clipboard=unnamedplus
 set number
 set numberwidth=5
 set encoding=utf-8
@@ -77,6 +81,6 @@ set expandtab
 set list listchars=tab:»·,trail:·,nbsp:·
 set textwidth=80
 set colorcolumn=+1
-set term=xterm-256color
+set nohlsearch
 highlight ColorColumn ctermbg=darkgrey
 
