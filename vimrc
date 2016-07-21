@@ -89,4 +89,6 @@ highlight clear SpellBad
 highlight SpellBad cterm=underline
 highlight CursorLine cterm=none ctermbg=black
 highlight Pmenu cterm=bold ctermbg=black ctermfg=white
+highlight LineNr ctermbg=black
+highlight CursorLineNr ctermbg=black
 
