@@ -35,7 +35,7 @@ autocmd CompleteDone * pclose   " Auto close preview window
 
 "format
 map <C-K> :pyf /usr/bin/clang-format.py<cr>
-imap <C-K> <c-o>:pyf /usr/bin/clang-format.py<cr>
+"imap <C-K> <c-o>:pyf /usr/bin/clang-format.py<cr>
 
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
@@ -82,5 +82,11 @@ set list listchars=tab:»·,trail:·,nbsp:·
 set textwidth=80
 set colorcolumn=+1
 set nohlsearch
-highlight ColorColumn ctermbg=darkgrey
+set mouse=""
+set cursorline
+highlight ColorColumn ctermbg=black
+highlight clear SpellBad
+highlight SpellBad cterm=underline
+highlight CursorLine cterm=none ctermbg=black
+highlight Pmenu cterm=bold ctermbg=black ctermfg=white
 
