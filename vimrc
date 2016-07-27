@@ -4,24 +4,18 @@ filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 " Let Vundle manage Vundle
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/vundle'
 
 """ Bundles """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" status bar at the bottom
-Bundle 'bling/vim-airline'
-" quoting and parenthesizing made simple
-Bundle 'tpope/vim-surround'
-" completion
-Bundle 'Valloric/YouCompleteMe'
-" generate completion config
-Bundle 'rdnetto/YCM-Generator'
-" file browser
-Bundle "scrooloose/nerdtree"
-" doxygen
-Bundle "vim-scripts/DoxygenToolkit.vim"
 
+Plugin 'bling/vim-airline'
+Plugin 'tpope/vim-surround'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'rdnetto/YCM-Generator'
+Plugin 'scrooloose/nerdtree'
 Plugin 'vim-pandoc/vim-pandoc'
 Plugin 'vim-pandoc/vim-pandoc-syntax'
+Plugin 'altercation/vim-colors-solarized'
 
 """ Real Config """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -84,11 +78,7 @@ set colorcolumn=+1
 set nohlsearch
 set mouse=""
 set cursorline
-highlight ColorColumn ctermbg=black
-highlight clear SpellBad
-highlight SpellBad cterm=underline
-highlight CursorLine cterm=none ctermbg=black
-highlight Pmenu cterm=bold ctermbg=black ctermfg=white
-highlight LineNr ctermbg=black
-highlight CursorLineNr ctermbg=black
+
+colorscheme solarized
+set background=dark
 
