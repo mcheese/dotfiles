@@ -76,7 +76,7 @@ set list listchars=tab:»·,trail:·,nbsp:·
 set textwidth=80
 set colorcolumn=+1
 set nohlsearch
-set mouse=""
+set clipboard=unnamed
 set cursorline
 
 colorscheme solarized
