@@ -16,11 +16,15 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'vim-pandoc/vim-pandoc'
 Plugin 'vim-pandoc/vim-pandoc-syntax'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'chriskempson/vim-tomorrow-theme'
+Plugin 'vim-scripts/a.vim'
+
 
 """ Real Config """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 let mapleader = " "
-inoremap jj <ESC>
+inoremap jk <ESC>
+inoremap kj <ESC>
 
 nnoremap <silent><leader>n :set relativenumber!<cr>
 set relativenumber
@@ -47,10 +51,10 @@ nnoremap <leader>h <C-W><C-H>
 set splitbelow
 set splitright
 " Tabs
-nnoremap <silent><leader>o :tabnext<CR>
-nnoremap <silent><leader>i :tabprevious<CR>
+nnoremap <leader>o :tabnext<CR>
+nnoremap <leader>i :tabprevious<CR>
 
-nnoremap <silent><leader>e :NERDTreeToggle<CR>
+nnoremap <leader>e :NERDTreeToggle<CR>
 
 filetype plugin indent on
 syntax on
@@ -79,6 +83,9 @@ set nohlsearch
 set clipboard=unnamed
 set cursorline
 
-colorscheme solarized
+colorscheme Tomorrow-Night
 set background=dark
+hi LineNr ctermbg=black
+hi Normal ctermbg=NONE
+hi SpellBad ctermbg=NONE ctermfg=NONE cterm=underline
 
