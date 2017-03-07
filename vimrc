@@ -16,9 +16,6 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'vim-pandoc/vim-pandoc'
 Plugin 'vim-pandoc/vim-pandoc-syntax'
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'chriskempson/vim-tomorrow-theme'
-Plugin 'vim-scripts/a.vim'
-
 
 """ Real Config """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -83,9 +80,8 @@ set nohlsearch
 set clipboard=unnamed
 set cursorline
 
-colorscheme Tomorrow-Night
+colorscheme solarized
 set background=dark
-hi LineNr ctermbg=black
 hi Normal ctermbg=NONE
 hi SpellBad ctermbg=NONE ctermfg=NONE cterm=underline
 
