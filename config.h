@@ -103,7 +103,7 @@ const char *colorname[] = {
 //	"#002b36",  /* 15: brwhite  */
 
 	/* solarized dark */
-	"#073642",  /*  0: black    */
+	"#222222",  /*  0: black    */
 	"#dc322f",  /*  1: red      */
 	"#859900",  /*  2: green    */
 	"#b58900",  /*  3: yellow   */
