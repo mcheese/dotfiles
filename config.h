@@ -103,7 +103,7 @@ const char *colorname[] = {
 //	"#002b36",  /* 15: brwhite  */
 
 	/* solarized dark */
-	"#222222",  /*  0: black    */
+	"#073642",  /*  0: black    */
 	"#dc322f",  /*  1: red      */
 	"#859900",  /*  2: green    */
 	"#b58900",  /*  3: yellow   */
@@ -111,7 +111,7 @@ const char *colorname[] = {
 	"#d33682",  /*  5: magenta  */
 	"#2aa198",  /*  6: cyan     */
 	"#eee8d5",  /*  7: white    */
-	"#002b36",  /*  8: brblack  */
+	"#121212",  /*  8: brblack  */
 	"#cb4b16",  /*  9: brred    */
 	"#586e75",  /* 10: brgreen  */
 	"#657b83",  /* 11: bryellow */
@@ -126,10 +126,10 @@ const char *colorname[] = {
  * Default colors (colorname index)
  * foreground, background, cursor, reverse cursor
  */
-unsigned int defaultfg = 7;
-unsigned int defaultbg = 0;
-unsigned int defaultcs = 256;
-unsigned int defaultrcs = 257;
+unsigned int defaultfg = 12;
+unsigned int defaultbg = 8;
+unsigned int defaultcs = 14;
+unsigned int defaultrcs = 15;
 
 /*
  * Default shape of cursor
