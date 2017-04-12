@@ -13,9 +13,9 @@ Plugin 'tpope/vim-surround'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'rdnetto/YCM-Generator'
 Plugin 'scrooloose/nerdtree'
-Plugin 'vim-pandoc/vim-pandoc'
-Plugin 'vim-pandoc/vim-pandoc-syntax'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'vim-scripts/a.vim'
+Plugin 'kien/ctrlp.vim'
 
 """ Real Config """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -35,6 +35,8 @@ map <C-K> :pyf /usr/bin/clang-format.py<cr>
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
 
+let g:ctrlp_custom_ignore = { 'dir':  '\v[\/](build)$' }
+
 let g:airline_powerline_fonts = 1
 
 nnoremap <silent><leader>g :YcmCompleter GoTo<cr>
@@ -53,9 +55,15 @@ nnoremap <leader>i :tabprevious<CR>
 
 nnoremap <leader>e :NERDTreeToggle<CR>
 
+" Remove input mode :A mapping
+autocmd VimEnter * iunmap <leader>ih
+autocmd VimEnter * iunmap <leader>is
+autocmd VimEnter * iunmap <leader>ihn
+
 filetype plugin indent on
 syntax on
 scriptencoding utf-8
+set mouse=a
 set number
 set numberwidth=5
 set encoding=utf-8
