@@ -21,55 +21,31 @@ vim.opt.rtp:prepend(lazypath)
 -- plugins
 
 require("lazy").setup({
-  { 'maxmx03/solarized.nvim' },
+  { 'sonph/onehalf',
+    config = function(plugin)
+      vim.opt.rtp:append(plugin.dir .. "/vim")
+    end
+  },
   { 'nvim-tree/nvim-tree.lua', dependencies = { "nvim-tree/nvim-web-devicons" } },
   { 'sbdchd/neoformat' },
   { 'ojroques/nvim-hardline' },
-  { 'VonHeikemen/lsp-zero.nvim', branch = 'v4.x' },
-  { 'williamboman/mason.nvim' },
-  { 'williamboman/mason-lspconfig.nvim' },
-  { 'neovim/nvim-lspconfig' },
   { 'hrsh7th/cmp-nvim-lsp' },
   { 'hrsh7th/nvim-cmp' },
+  { 'mason-org/mason-lspconfig.nvim', dependencies = {"mason-org/mason.nvim", "neovim/nvim-lspconfig", } },
 })
 
 require("nvim-tree").setup {}
 require("hardline").setup {}
 
-local lsp_zero = require('lsp-zero')
-
-local lsp_attach = function(client, bufnr)
-  local opts = {buffer = bufnr}
-
-  vim.keymap.set('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>', opts)
-  vim.keymap.set('n', '<leader>t', '<cmd>lua vim.lsp.buf.hover()<cr>', opts)
-  vim.keymap.set('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>', opts)
-  vim.keymap.set('n', '<leader>g', '<cmd>lua vim.lsp.buf.definition()<cr>', opts)
-  vim.keymap.set('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<cr>', opts)
-  vim.keymap.set('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<cr>', opts)
-  vim.keymap.set('n', 'go', '<cmd>lua vim.lsp.buf.type_definition()<cr>', opts)
-  vim.keymap.set('n', 'gr', '<cmd>lua vim.lsp.buf.references()<cr>', opts)
-  vim.keymap.set('n', 'gs', '<cmd>lua vim.lsp.buf.signature_help()<cr>', opts)
-  vim.keymap.set('n', '<F2>', '<cmd>lua vim.lsp.buf.rename()<cr>', opts)
-  vim.keymap.set({'n', 'x'}, '<F3>', '<cmd>lua vim.lsp.buf.format({async = true})<cr>', opts)
-  vim.keymap.set('n', '<F4>', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
-end
-
-lsp_zero.extend_lspconfig({
-  sign_text = true,
-  lsp_attach = lsp_attach,
-  capabilities = require('cmp_nvim_lsp').default_capabilities()
-})
-
-require('mason').setup({})
-require('mason-lspconfig').setup({
-  ensure_installed = { 'clangd', 'rust_analyzer', 'lua_ls', 'pyright', 'powershell_es', 'bashls', },
-  handlers = {
-    function(server_name)
-      require('lspconfig')[server_name].setup({})
-    end,
-  }
-})
+--require('mason').setup({})
+--require('mason-lspconfig').setup({
+--  ensure_installed = { 'clangd', 'rust_analyzer', 'lua_ls', 'pyright', 'powershell_es', 'bashls', },
+--  handlers = {
+--    function(server_name)
+--      require('lspconfig')[server_name].setup({})
+--    end,
+--  }
+--})
 
 local cmp = require('cmp')
 
@@ -85,6 +61,7 @@ cmp.setup({
   },
   mapping = cmp.mapping.preset.insert({}),
 })
+
 
 -------------------------------------------------------------------------------
 -- bindings
@@ -102,7 +79,19 @@ vim.keymap.set('n', '<leader>l', '<C-W><C-L>')
 vim.keymap.set('n', '<leader>i', ':tabprevious<CR>')
 vim.keymap.set('n', '<leader>o', ':tabnext<CR>')
 vim.keymap.set('n', '<C-K><C-F>', ':Neoformat<CR>')
-
+--lsp
+vim.keymap.set('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>', opts)
+vim.keymap.set('n', '<leader>t', '<cmd>lua vim.lsp.buf.hover()<cr>', opts)
+vim.keymap.set('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>', opts)
+vim.keymap.set('n', '<leader>g', '<cmd>lua vim.lsp.buf.definition()<cr>', opts)
+vim.keymap.set('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<cr>', opts)
+vim.keymap.set('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<cr>', opts)
+vim.keymap.set('n', 'go', '<cmd>lua vim.lsp.buf.type_definition()<cr>', opts)
+vim.keymap.set('n', 'gr', '<cmd>lua vim.lsp.buf.references()<cr>', opts)
+vim.keymap.set('n', 'gs', '<cmd>lua vim.lsp.buf.signature_help()<cr>', opts)
+vim.keymap.set('n', '<F2>', '<cmd>lua vim.lsp.buf.rename()<cr>', opts)
+vim.keymap.set({'n', 'x'}, '<F3>', '<cmd>lua vim.lsp.buf.format({async = true})<cr>', opts)
+vim.keymap.set('n', '<F4>', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
 
 -------------------------------------------------------------------------------
 -- settings
@@ -119,58 +108,9 @@ vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
 vim.opt.cursorline = true
 
-vim.o.termguicolors = true
-vim.o.background = 'dark'
-vim.cmd.colorscheme 'solarized'
-
-
--------------------------------------------------------------------------------
-
-
--- Setup lazy.nvim
---require("lazy").setup({
---  spec = {
---
---    {
---      'maxmx03/solarized.nvim',
---      lazy = false,
---      priority = 1000,
---      ---@type solarized.config
---      opts = {},
---      config = function(_, opts)
---        vim.o.termguicolors = true
---        vim.o.background = 'dark'
---        require('solarized').setup(opts)
---        vim.cmd.colorscheme 'solarized'
---      end,
---    },
---
---    {
---      "nvim-tree/nvim-tree.lua",
---      version = "*",
---      lazy = false,
---      dependencies = {
---        "nvim-tree/nvim-web-devicons",
---      },
---      config = function()
---        require("nvim-tree").setup {}
---      end,
---    },
---
---    {'sbdchd/neoformat'},
---    {
---      'ojroques/nvim-hardline',
---      config = function()
---        require("hardline").setup {}
---      end,
---    },
---
---  },
---
---  -- Configure any other settings here. See the documentation for more details.
---  -- colorscheme that will be used when installing plugins.
---  install = { colorscheme = { "habamax" } },
---  -- automatically check for plugin updates
---  checker = { enabled = true },
---})
+if (not vim.g.vscode) then
+  vim.o.termguicolors = true
+  vim.o.background = 'dark'
+  vim.cmd.colorscheme 'onehalfdark'
+end
 
